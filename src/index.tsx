@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import AppRouter from './components/AppRouter/AppRouter'
+import AppRouter from './router/AppRouter'
 import * as injectTapEventPlugin from 'react-tap-event-plugin'
 import axios from 'axios'
 import { Provider as ReduxProvider } from 'react-redux'

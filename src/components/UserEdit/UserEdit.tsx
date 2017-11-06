@@ -1,7 +1,4 @@
 import * as React from 'react'
-import { connect } from 'react-redux'
-import { browserHistory } from 'react-router'
-import * as actions from '../../actions/userActions'
 import UserForm from '../UserForm/UserForm'
 // const classes = require('./AdminManagement.css')
 export interface UserEditProps{
@@ -9,7 +6,7 @@ export interface UserEditProps{
   editUser: (id: String, name: String) => void
 }
 
-export class UserEdit extends React.Component<UserEditProps, any> {
+export default class UserEdit extends React.Component<UserEditProps, any> {
   constructor(props) {
     super(props)
 
@@ -23,15 +20,3 @@ export class UserEdit extends React.Component<UserEditProps, any> {
     )
   }
 }
-
-const mapStateToProps = (state: any) => ({
-})
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-      editUser: (id: String, name: String): void => {
-          actions.editUser(id, name, dispatch)
-      }
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(UserEdit)

@@ -1,6 +1,4 @@
 import * as React from 'react'
-import { Link } from 'react-router'
-import { connect } from 'react-redux'
 import { User } from '../../main/userMain'
 
 export interface UserInfoProps{
@@ -13,8 +11,6 @@ export default class UserInfo extends React.Component<UserInfoProps, any> {
   }
   render () {
     const userDetails = this.props.userDetails
-    console.log(typeof this.props.userDetails)
-
     return (
       <div>
         <div>
