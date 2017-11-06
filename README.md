@@ -1,4 +1,4 @@
-# Organize Me UI
+# Rise Art Client
 ## Setup
 
 ```
