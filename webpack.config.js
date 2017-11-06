@@ -14,7 +14,6 @@ module.exports = {
   context: sourcePath,
   entry: {
     main: './index.tsx',
-    // app: './src/server/app.js',
     vendor: [
       'react',
       'react-dom',
@@ -32,8 +31,6 @@ module.exports = {
   target: 'web',
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
-    // Fix webpack's default behavior to not load packages with jsnext:main module
-    // https://github.com/Microsoft/TypeScript/issues/11677
     mainFields: ['main']
   },
   module: {
@@ -100,12 +97,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: 'index.html'
-    }),
-    new webpack.DefinePlugin({
-     'process.env': {
-       'NODE_ENV': JSON.stringify('production')
-     }
-   })
+    })
   ],
   devServer: {
     contentBase: sourcePath,
@@ -117,8 +109,6 @@ module.exports = {
     disableHostCheck: true
   },
   node: {
-    // workaround for webpack-dev-server issue
-    // https://github.com/webpack/webpack-dev-server/issues/60#issuecomment-103411179
     fs: 'empty',
     net: 'empty'
   }
