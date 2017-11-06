@@ -1,0 +1,27 @@
+.rise-art-container {
+
+}
+
+.logo{
+  max-width: 150px;
+}
+
+/*User Profile*/
+.profile {
+  width: 100%;
+}
+.profile-container{
+  max-width: 700px;
+  margin: 20px auto;
+}
+.info{
+  padding-left: 10px;
+}
+
+/*Update User*/
+.update{
+  margin-top:50px;
+}
+.alert{
+  margin-top: 20px;
+}

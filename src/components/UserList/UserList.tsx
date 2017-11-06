@@ -10,7 +10,7 @@ export default class UserList extends React.Component<UserListProps, any> {
   render () {
     const userList = this.props.userList
     return (
-      <table>
+      <table className="table">
         <thead>
           <tr>
             <th>Name</th>

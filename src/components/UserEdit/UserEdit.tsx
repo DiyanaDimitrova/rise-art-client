@@ -14,7 +14,7 @@ export default class UserEdit extends React.Component<UserEditProps, any> {
 
   render() {
     return (
-      <div id='adminManagementWrapper'>
+      <div>
         <UserForm name={this.props.params.name} id={this.props.params.id} editUser={this.props.editUser}/>
       </div>
     )
