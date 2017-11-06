@@ -35,7 +35,7 @@ export default class App extends React.Component<Props, any> {
   render() {
     const { userList, userListLoading } = this.props;
     return (
-      <div id='appDiv' className={classes.appDiv}>
+      <div>
          {this.props.isOpen === true && <Message messageText={this.props.message} closeMessage={this.props.clearMessage} />}
          {this.props.userList !== null && this.props.userList.length > 0 && this.props.userListLoading === false ? <UserList userList={this.props.userList} deleteUser={this.props.removeUser}></UserList> : <div>Loading ...</div>}
       </div>
