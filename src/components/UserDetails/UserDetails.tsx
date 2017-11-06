@@ -3,11 +3,11 @@ import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 import * as actions from '../../actions/userActions'
 import UserInfo from '../UserInfo/UserInfo'
-// import Header from '../../../components/Header/Header'
+import * as main from '../../main/userMain'
 const classes = require('./UserDetails.css')
 
 export interface UserDetailsProps{
-  userDetails: actions.User,
+  userDetails: main.User,
   userLoading: Boolean,
   params: any,
   loadUser: (id: String) => void

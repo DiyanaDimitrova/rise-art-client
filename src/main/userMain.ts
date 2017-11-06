@@ -2,11 +2,29 @@ import { Action } from 'redux'
 import * as r from '../reducers/userReducer'
 import * as a from '../actions/userActions'
 
+export interface User {
+    _id: String
+    name: String
+    email: String
+    avatar: String
+    bio: String
+    company: {
+      name: String
+    }
+    address: {
+      zipCode: Number
+      city: String
+      streetName: String
+      streetAddress: String
+    }
+}
+
+
 export interface UserState {
   userListLoading: Boolean,
-  userList: Array<a.User>
+  userList: Array<User>
   userLoading: Boolean,
-  userDetails: a.User,
+  userDetails: User,
   message: String
 }
 

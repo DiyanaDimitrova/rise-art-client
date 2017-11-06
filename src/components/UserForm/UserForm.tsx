@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
-import { User } from '../../actions/userActions'
+import { User } from '../../main/userMain'
 import { browserHistory } from 'react-router'
 
 export interface UserFromProps{

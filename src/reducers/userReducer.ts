@@ -3,18 +3,14 @@ import { Action } from 'redux'
 import * as actions from '../actions/userActions'
 export function getUserListReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.GET_USER_LIST) {
-        let newState = (<any>Object).assign({}, state)
-        newState.userListLoading = true
-        return newState
+        return { ...state, userListLoading: true}
     } else {
         return state
     }
 }
 
 export function getUserListSuccessReducer(state: UserState, action: Action): UserState {
-  console.log('tdsadsadasdsadasdsadasdasdsest')
     if (action.type === actions.GET_USER_LIST_SUCCESS) {
-      console.log('test')
         let _action = action as actions.GetUserListAction
         return { ...state, userList: _action.userList, userListLoading: false}
     } else {
@@ -32,9 +28,7 @@ export function setUserListFailureReducer(state: UserState, action: Action): Use
 }
 export function getUserReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.GET_USER) {
-        let newState = (<any>Object).assign({}, state)
-        newState.userLoading = true
-        return newState
+        return { ...state, userLoading: true}
     } else {
         return state
     }
@@ -43,10 +37,7 @@ export function getUserReducer(state: UserState, action: Action): UserState {
 export function getUserSuccessReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.GET_USER_SUCCESS) {
         let _action = action as actions.GetUserAction
-        let newState = (<any>Object).assign({}, state)
-        newState.userDetails = (<any>Object).assign([], _action.userDetails)
-        newState.userLoading = false
-        return newState
+        return { ...state, userDetails: _action.userDetails, userLoading: false}
     } else {
         return state
     }
@@ -54,10 +45,7 @@ export function getUserSuccessReducer(state: UserState, action: Action): UserSta
 export function setUserFailureReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.GET_USER_FAILURE) {
         let _action = action as actions.GetUserAction
-        let newState = (<any>Object).assign({}, state)
-        newState.userDetails = (<any>Object).assign({}, _action.userDetails)
-        newState.userLoading = false
-        return newState
+        return { ...state, userDetails: null, userLoading: false}
     } else {
         return state
     }
@@ -66,9 +54,7 @@ export function setUserFailureReducer(state: UserState, action: Action): UserSta
 export function updateUserSuccessReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.UPDATE_USER_SUCCESS) {
         let _action = action as actions.UserAction
-        let newState = (<any>Object).assign({}, state)
-        newState.message = _action.message
-        return newState
+        return { ...state, message: _action.message}
     } else {
         return state
     }
@@ -77,9 +63,7 @@ export function updateUserSuccessReducer(state: UserState, action: Action): User
 export function updateUserFailureReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.UPDATE_USER_FAILURE) {
         let _action = action as actions.UserAction
-        let newState = (<any>Object).assign({}, state)
-        newState.message = _action.message
-        return newState
+        return { ...state, message: _action.message}
       } else {
         return state
     }
@@ -88,9 +72,7 @@ export function updateUserFailureReducer(state: UserState, action: Action): User
 export function deleteUserSuccessReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.DELETE_USER_SUCCESS) {
         let _action = action as actions.UserAction
-        let newState = (<any>Object).assign({}, state)
-        newState.message = _action.message
-        return newState
+        return { ...state, message: _action.message}
     } else {
         return state
     }
@@ -99,9 +81,7 @@ export function deleteUserSuccessReducer(state: UserState, action: Action): User
 export function deleteUserFailureReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.DELETE_USER_FAILURE) {
         let _action = action as actions.UserAction
-        let newState = (<any>Object).assign({}, state)
-        newState.message = _action.message
-        return newState
+        return { ...state, message: _action.message}
       } else {
         return state
     }

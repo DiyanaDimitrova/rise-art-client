@@ -1,15 +1,15 @@
 import * as React from 'react'
-// import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { AppState } from '../../store/AppStore'
 import UserList from '../UserList/UserList'
 import { withRouter } from 'react-router'
 import * as actions from '../../actions/userActions'
+import * as main from '../../main/userMain'
 import * as style from './style.css'
 const classes = require('./App.css')
 
 interface Props {
-  userList: Array<actions.User>,
+  userList: Array<main.User>,
   userListLoading: Boolean,
   message: String,
   loadUserList: () => void,
