@@ -11,13 +11,11 @@ export class AppRouter extends React.Component<any, AppState> {
 
   render() {
     return (
-      <div id='appContainerDiv'>
         <Router ref='routeRef' history={browserHistory} >
           <Route path='/' component={App} />
           <Route path='/user/:id' component={UserDetails}/>
           <Route path='/user/:id/:name' component={UserEdit}/>
         </Router>
-      </div>
     )
   }
 }
