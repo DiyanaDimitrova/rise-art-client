@@ -75,7 +75,7 @@ export function editUser(id: String, name: String, dispatch: any): void {
           loadUserList(dispatch)
       })
       .catch((err) => {
-          dispatch(updateUserFailAction(err.response.data.message))
+          dispatch(updateUserFailAction(err.data.message))
       })
 }
 
@@ -92,6 +92,6 @@ export function removeUser(id: String, dispatch: any): void {
           loadUserList(dispatch)
       })
       .catch((err) => {
-          dispatch(deleteUserFailAction(err.response.data.message))
+          dispatch(deleteUserFailAction(err.data.message))
       })
 }
