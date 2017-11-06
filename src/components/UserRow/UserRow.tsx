@@ -21,9 +21,8 @@ export default class UserRow extends React.Component<UserRowProps, any> {
         <td>{user.name}</td>
         <td><Link to={`/user/${user._id}`} activeClassName="active">Profile</Link></td>
         <td><Link to={`/user/${user._id}/${user.name}`} activeClassName="active">Update</Link></td>
-        <td><button onClick={this.deleteUser}>Delete</button></td>
+        <td><Link to={``} onClick={this.deleteUser} activeClassName="active">Delete</Link></td>
       </tr>
-
     )
   }
 }
