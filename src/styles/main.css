@@ -1,7 +1,3 @@
-.rise-art-container {
-
-}
-
 .logo{
   max-width: 150px;
 }
@@ -28,4 +24,7 @@
 /*App*/
 .list{
   margin-top: 20px;
+}
+.username {
+  padding-top: 18px !important; 
 }

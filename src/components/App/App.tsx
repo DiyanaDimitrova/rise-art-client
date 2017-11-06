@@ -2,7 +2,6 @@ import * as React from 'react'
 import UserList from '../UserList/UserList'
 import Message from '../Message/Message'
 import * as main from '../../main/userMain'
-const classes = require('./App.css')
 
 interface Props {
   userList: Array<main.User>,
