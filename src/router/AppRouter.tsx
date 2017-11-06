@@ -12,7 +12,7 @@ export class AppRouter extends React.Component<any, AppState> {
     return (
       <div>
         <nav className="navbar navbar-light bg-light">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             <img src="https://d3czolpekmjw7h.cloudfront.net/build/static/media/ra-logo.558ef972.svg" className="logo d-inline-block align-top" alt="" />
           </a>
         </nav>

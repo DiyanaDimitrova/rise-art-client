@@ -38,14 +38,14 @@ export default class UserFrom extends React.Component<UserFromProps, UserFromSta
   render () {
     return (
       <div className="row update">
-      <div className="col-sm-12 col-lg-6">
-        <div className="input-group">
-             <input type='text' className="form-control" name='name' value={this.state.name} onChange={this.nameEntered} />
-          <span className="input-group-btn">
-          <button onClick={this.updateName} className="btn btn-secondary">Update</button>
-          </span>
+        <div className="col-sm-12 col-md-12 col-lg-12">
+          <div className="input-group">
+            <input type='text' className="form-control" name='name' value={this.state.name} onChange={this.nameEntered} />
+            <span className="input-group-btn">
+              <button onClick={this.updateName} className="btn btn-secondary">Update</button>
+            </span>
+          </div>
         </div>
-      </div>
       </div>
     )
   }
