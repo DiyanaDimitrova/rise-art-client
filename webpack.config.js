@@ -1,6 +1,5 @@
 var webpack = require('webpack')
 var path = require('path')
-var envConfig = require('./src/server/config/default.json')
 
 // variables
 var isProduction = process.argv.indexOf('-p') >= 0
@@ -114,7 +113,7 @@ module.exports = {
     stats: {
       warnings: false
     },
-    port: process.env.PORT || envConfig.server.server_port,
+    port: 3333,
     disableHostCheck: true
   },
   node: {
