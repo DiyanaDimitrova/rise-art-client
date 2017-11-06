@@ -2,7 +2,6 @@ import * as React from 'react'
 import { browserHistory } from 'react-router'
 import UserInfo from '../UserInfo/UserInfo'
 import * as main from '../../main/userMain'
-const classes = require('./UserDetails.css')
 
 export interface UserDetailsProps{
   userDetails: main.User,
