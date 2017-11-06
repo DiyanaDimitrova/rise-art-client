@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { Action } from 'redux'
-import { MakeAdminRequest, UserAccountRequest } from '../main/userMain'
 
 export const GET_USER_LIST = '@@User/GET_USER_LIST'
 export const GET_USER_LIST_SUCCESS = '@@User/GET_USER_LIST_SUCCESS'
@@ -39,11 +38,8 @@ export interface GetUserListAction extends Action {
 export interface GetUserAction extends Action {
     userDetails: User
 }
-export interface UserUpdateAction extends Action {
-    updateMessage: String
-}
-export interface UserDeleteAction extends Action {
-    deleteMessage: String
+export interface UserAction extends Action {
+    message: String
 }
 
 
@@ -89,18 +85,18 @@ export function loadUser(id: String, dispatch: any): void {
           dispatch(getUserFailure(null))
       })
 }
-export function updateUserSuccessAction(updateMessage: String): UserUpdateAction {
+export function updateUserSuccessAction(message: String): UserAction {
     return {
         type: UPDATE_USER_SUCCESS,
-        updateMessage: updateMessage
-    } as UserUpdateAction
+        message: message
+    } as UserAction
 }
 
-export function updateUserFailAction(updateMessage: String): UserUpdateAction {
+export function updateUserFailAction(message: String): UserAction {
     return {
         type: UPDATE_USER_FAILURE,
-        updateMessage: updateMessage
-    } as UserUpdateAction
+        message: message
+    } as UserAction
 }
 export function editUser(id: String, name: String, dispatch: any): void {
     axios.put('/users/update/' + id, { name: name })
@@ -113,18 +109,18 @@ export function editUser(id: String, name: String, dispatch: any): void {
           dispatch(updateUserFailAction(err.response.data.message))
       })
 }
-export function deleteUserSuccessAction(deleteMessage: String): UserDeleteAction {
+export function deleteUserSuccessAction(message: String): UserAction {
     return {
         type: DELETE_USER_SUCCESS,
-        deleteMessage: deleteMessage
-    } as UserDeleteAction
+        message: message
+    } as UserAction
 }
 
-export function deleteUserFailAction(deleteMessage: String): UserDeleteAction {
+export function deleteUserFailAction(message: String): UserAction {
     return {
         type: DELETE_USER_FAILURE,
-        deleteMessage: deleteMessage
-    } as UserDeleteAction
+        message: message
+    } as UserAction
 }
 
 export function removeUser(id: String, dispatch: any): void {

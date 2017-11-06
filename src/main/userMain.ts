@@ -2,20 +2,12 @@ import { Action } from 'redux'
 import * as r from '../reducers/userReducer'
 import * as a from '../actions/userActions'
 
-export interface MakeAdminRequest {
-    usersToMakeAdmin: Array<any>
-    type: String
-}
-export interface UserAccountRequest {
-    username: String
-}
 export interface UserState {
   userListLoading: Boolean,
   userList: Array<a.User>
   userLoading: Boolean,
   userDetails: a.User,
-  updateMessage: String,
-  deleteMessage: String
+  message: String
 }
 
 export const initialState: UserState = {
@@ -23,8 +15,7 @@ export const initialState: UserState = {
   userList: [],
   userLoading: false,
   userDetails: null,
-  updateMessage: '',
-  deleteMessage: ''
+  message: ''
 }
 
 const reducers = {
@@ -41,7 +32,6 @@ const reducers = {
 }
 
 export function userReducer(state: UserState = initialState, action: Action): UserState {
-    state = initialState
     let reducer = reducers[action.type]
     if (reducer) {
         return reducer(state, action)

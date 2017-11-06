@@ -2,7 +2,6 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 import * as actions from '../../actions/userActions'
-import { MakeAdminRequest } from '../../main/userMain'
 import UserForm from '../UserForm/UserForm'
 // const classes = require('./AdminManagement.css')
 export interface UserEditProps{

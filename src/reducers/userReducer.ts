@@ -71,9 +71,9 @@ export function setUserFailureReducer(state: UserState, action: Action): UserSta
 
 export function updateUserSuccessReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.UPDATE_USER_SUCCESS) {
-        let _action = action as actions.UserUpdateAction
+        let _action = action as actions.UserAction
         let newState = (<any>Object).assign({}, state)
-        newState.updateMessage = _action.updateMessage
+        newState.message = _action.message
         return newState
     } else {
         return state
@@ -82,9 +82,9 @@ export function updateUserSuccessReducer(state: UserState, action: Action): User
 
 export function updateUserFailureReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.UPDATE_USER_FAILURE) {
-        let _action = action as actions.UserUpdateAction
+        let _action = action as actions.UserAction
         let newState = (<any>Object).assign({}, state)
-        newState.updateMessage = _action.updateMessage
+        newState.message = _action.message
         return newState
       } else {
         return state
@@ -93,9 +93,9 @@ export function updateUserFailureReducer(state: UserState, action: Action): User
 
 export function deleteUserSuccessReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.DELETE_USER_SUCCESS) {
-        let _action = action as actions.UserDeleteAction
+        let _action = action as actions.UserAction
         let newState = (<any>Object).assign({}, state)
-        newState.deleteMessage = _action.deleteMessage
+        newState.message = _action.message
         return newState
     } else {
         return state
@@ -104,9 +104,9 @@ export function deleteUserSuccessReducer(state: UserState, action: Action): User
 
 export function deleteUserFailureReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.DELETE_USER_FAILURE) {
-        let _action = action as actions.UserDeleteAction
+        let _action = action as actions.UserAction
         let newState = (<any>Object).assign({}, state)
-        newState.deleteMessage = _action.deleteMessage
+        newState.message = _action.message
         return newState
       } else {
         return state
