@@ -131,6 +131,7 @@ export function removeUser(id: String, dispatch: any): void {
           loadUserList(dispatch)
       })
       .catch((err) => {
+        console.log('AAAA' + JSON.stringify(err.response))
           dispatch(deleteUserFailAction(err.response.data.message))
       })
 }

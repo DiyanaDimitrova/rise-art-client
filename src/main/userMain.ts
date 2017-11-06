@@ -15,7 +15,7 @@ export const initialState: UserState = {
   userList: [],
   userLoading: false,
   userDetails: null,
-  message: ''
+  message: null
 }
 
 const reducers = {

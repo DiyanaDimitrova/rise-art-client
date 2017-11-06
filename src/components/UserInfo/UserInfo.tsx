@@ -20,14 +20,14 @@ export default class UserInfo extends React.Component<UserInfoProps, any> {
         <div>
           <img src={userDetails.avatar.toString()}/>
         </div>
-        <div>{userDetails.name}</div>
-        <div>{userDetails.email}</div>
-        <div>{userDetails.bio}</div>
-        <div>{userDetails.company.name}</div>
-        <div>{userDetails.address.city}</div>
-        <div>{userDetails.address.streetAddress}</div>
-        <div>{userDetails.address.streetName}</div>
-        <div>{userDetails.address.zipCode}</div>
+        <div>Name: {userDetails.name}</div>
+        <div>Email: {userDetails.email}</div>
+        <div>Bio: {userDetails.bio}</div>
+        <div>Company name: {userDetails.company.name}</div>
+        <div>City: {userDetails.address.city}</div>
+        <div>Street Address: {userDetails.address.streetAddress}</div>
+        <div>Street Name: {userDetails.address.streetName}</div>
+        <div>Zip Code: {userDetails.address.zipCode}</div>
       </div>
 
     )

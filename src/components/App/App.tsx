@@ -11,6 +11,7 @@ const classes = require('./App.css')
 interface Props {
   userList: Array<actions.User>,
   userListLoading: Boolean,
+  message: String,
   loadUserList: () => void,
   removeUser: (id: String) => void
 }
@@ -26,6 +27,7 @@ class App extends React.Component<Props, any>{
   public static defaultProps: Props = {
     userList: [],
     userListLoading: false,
+    message: null,
     loadUserList: null,
     removeUser: null
   }
@@ -36,14 +38,16 @@ class App extends React.Component<Props, any>{
     const { userList, userListLoading } = this.props;
     return (
       <div id='appDiv' className={classes.appDiv}>
-         { this.props.userList !== null && this.props.userList.length > 0 && this.props.userListLoading === false ? <UserList userList={this.props.userList} deleteUser={this.props.removeUser}></UserList> : <div>Loading ...</div>  }
+         {this.props.message !== null && <div>{this.props.message}</div>}
+         {this.props.userList !== null && this.props.userList.length > 0 && this.props.userListLoading === false ? <UserList userList={this.props.userList} deleteUser={this.props.removeUser}></UserList> : <div>Loading ...</div>  }
       </div>
     )
   }
 }
 const mapStateToProps = (state: any) => ({
   userList: state.user.userList,
-  userListLoading: state.user.userListLoading
+  userListLoading: state.user.userListLoading,
+  message: state.user.message
 })
 
 function mapDispatchToProps(dispatch) {

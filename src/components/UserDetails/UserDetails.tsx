@@ -28,8 +28,8 @@ export class UserDetails extends React.Component<UserDetailsProps, any> {
   render() {
       return (
         <div >
-          {this.props.userDetails !== null && this.props.userLoading === false &&
-            <UserInfo userDetails={this.props.userDetails}/>}
+          {this.props.userDetails !== null && this.props.userLoading === false ?
+            <UserInfo userDetails={this.props.userDetails}/> : <div>Loading ...</div>}
         </div>
       )
     }

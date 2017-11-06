@@ -25,7 +25,6 @@ export class UserEdit extends React.Component<UserEditProps, any> {
 }
 
 const mapStateToProps = (state: any) => ({
-
 })
 
 const mapDispatchToProps = (dispatch) => {
