@@ -1,11 +1,11 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import AppRouter from './router/AppRouter'
-import * as injectTapEventPlugin from 'react-tap-event-plugin'
+// import * as injectTapEventPlugin from 'react-tap-event-plugin'
 import axios from 'axios'
 import { Provider as ReduxProvider } from 'react-redux'
 import { appStore } from './store/AppStore'
-injectTapEventPlugin()
+// injectTapEventPlugin()
 // setup global axios defaults
 axios.defaults.timeout = 6000
 axios.defaults.baseURL = 'http://localhost:3001'
