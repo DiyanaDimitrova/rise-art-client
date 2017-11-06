@@ -36,7 +36,7 @@ class App extends React.Component<Props, any>{
     const { userList, userListLoading } = this.props;
     return (
       <div id='appDiv' className={classes.appDiv}>
-         { this.props.userList ? <UserList userList={this.props.userList} deleteUser={this.props.removeUser}></UserList> : null }
+         { this.props.userList !== null && this.props.userList.length > 0 && this.props.userListLoading === false ? <UserList userList={this.props.userList} deleteUser={this.props.removeUser}></UserList> : <div>Loading ...</div>  }
       </div>
     )
   }

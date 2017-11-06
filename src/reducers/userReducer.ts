@@ -16,10 +16,7 @@ export function getUserListSuccessReducer(state: UserState, action: Action): Use
     if (action.type === actions.GET_USER_LIST_SUCCESS) {
       console.log('test')
         let _action = action as actions.GetUserListAction
-        // let newState = (<any>Object).assign({}, state)
-        // newState.userList = (<any>Object).assign([], _action.userList)
-        // newState.userListLoading = false
-        return { ...state, userList: _action.userList}
+        return { ...state, userList: _action.userList, userListLoading: false}
     } else {
       console.log('kur')
         return state
@@ -28,10 +25,7 @@ export function getUserListSuccessReducer(state: UserState, action: Action): Use
 export function setUserListFailureReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.GET_USER_LIST_FAILURE) {
         let _action = action as actions.GetUserListAction
-        let newState = (<any>Object).assign({}, state)
-        newState.userList = (<any>Object).assign([], _action.userList)
-        newState.userListLoading = false
-        return newState
+        return { ...state, userList: [], userListLoading: false}
     } else {
         return state
     }
