@@ -2,7 +2,7 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import { AppState } from '../../store/AppStore'
 import UserList from '../UserList/UserList'
-import { withRouter } from 'react-router'
+import Message from '../Message/Message'
 import * as actions from '../../actions/userActions'
 import * as main from '../../main/userMain'
 import * as style from './style.css'
@@ -12,34 +12,37 @@ interface Props {
   userList: Array<main.User>,
   userListLoading: Boolean,
   message: String,
+  isOpen: Boolean,
   loadUserList: () => void,
-  removeUser: (id: String) => void
+  removeUser: (id: String) => void,
+  clearMessage: () => void
 }
+
 
 class App extends React.Component<Props, any>{
   constructor(props) {
     super(props)
-    this.state = {
-      userList: props.userList
-    }
   }
 
   public static defaultProps: Props = {
     userList: [],
     userListLoading: false,
     message: null,
+    isOpen: false,
     loadUserList: null,
-    removeUser: null
+    removeUser: null,
+    clearMessage: null
   }
   componentDidMount() {
       this.props.loadUserList()
   }
+
   render() {
     const { userList, userListLoading } = this.props;
     return (
       <div id='appDiv' className={classes.appDiv}>
-         {this.props.message !== null && <div>{this.props.message}</div>}
-         {this.props.userList !== null && this.props.userList.length > 0 && this.props.userListLoading === false ? <UserList userList={this.props.userList} deleteUser={this.props.removeUser}></UserList> : <div>Loading ...</div>  }
+         {this.props.isOpen === true && <Message messageText={this.props.message} closeMessage={this.props.clearMessage} />}
+         {this.props.userList !== null && this.props.userList.length > 0 && this.props.userListLoading === false ? <UserList userList={this.props.userList} deleteUser={this.props.removeUser}></UserList> : <div>Loading ...</div>}
       </div>
     )
   }
@@ -47,7 +50,8 @@ class App extends React.Component<Props, any>{
 const mapStateToProps = (state: any) => ({
   userList: state.user.userList,
   userListLoading: state.user.userListLoading,
-  message: state.user.message
+  message: state.user.message,
+  isOpen: state.user.isOpen
 })
 
 function mapDispatchToProps(dispatch) {
@@ -57,6 +61,9 @@ function mapDispatchToProps(dispatch) {
     },
     removeUser: (id: String): void => {
         actions.removeUser(id, dispatch)
+    },
+    clearMessage: (): void => {
+        actions.clearMessage(dispatch)
     }
   }
 }

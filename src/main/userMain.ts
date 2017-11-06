@@ -25,7 +25,8 @@ export interface UserState {
   userList: Array<User>
   userLoading: Boolean,
   userDetails: User,
-  message: String
+  message: String,
+  isOpen: Boolean
 }
 
 export const initialState: UserState = {
@@ -33,7 +34,8 @@ export const initialState: UserState = {
   userList: [],
   userLoading: false,
   userDetails: null,
-  message: null
+  message: null,
+  isOpen: false
 }
 
 const reducers = {
@@ -46,7 +48,8 @@ const reducers = {
   [a.UPDATE_USER_SUCCESS]: r.updateUserSuccessReducer,
   [a.UPDATE_USER_FAILURE]: r.updateUserFailureReducer,
   [a.DELETE_USER_SUCCESS]: r.deleteUserSuccessReducer,
-  [a.DELETE_USER_FAILURE]: r.deleteUserFailureReducer
+  [a.DELETE_USER_FAILURE]: r.deleteUserFailureReducer,
+  [a.CLEAR_MESSAGE_DATA]: r.clearMessageDataReducer
 }
 
 export function userReducer(state: UserState = initialState, action: Action): UserState {

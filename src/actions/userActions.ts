@@ -11,6 +11,7 @@ export const UPDATE_USER_SUCCESS = '@@User/UPDATE_USER_SUCCESS'
 export const UPDATE_USER_FAILURE = '@@User/UPDATE_USER_FAILURE'
 export const DELETE_USER_SUCCESS = '@@User/DELETE_USER_SUCCESS'
 export const DELETE_USER_FAILURE = '@@User/DELETE_USER_FAILURE'
+export const CLEAR_MESSAGE_DATA = '@@User/CLEAR_MESSAGE_DATA'
 
 export interface GetUserListAction extends Action {
     userList: Array<m.User>
@@ -94,4 +95,10 @@ export function removeUser(id: String, dispatch: any): void {
       .catch((err) => {
           dispatch(deleteUserFailAction(err.data.message))
       })
+}
+export function clearMessageData(): Action {
+    return { type: CLEAR_MESSAGE_DATA } as Action
+}
+export function clearMessage(dispatch: any): void {
+    dispatch(clearMessageData())
 }

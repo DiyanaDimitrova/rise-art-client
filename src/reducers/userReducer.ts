@@ -54,7 +54,7 @@ export function setUserFailureReducer(state: UserState, action: Action): UserSta
 export function updateUserSuccessReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.UPDATE_USER_SUCCESS) {
         let _action = action as actions.UserAction
-        return { ...state, message: _action.message}
+        return { ...state, message: _action.message, isOpen: true}
     } else {
         return state
     }
@@ -63,7 +63,7 @@ export function updateUserSuccessReducer(state: UserState, action: Action): User
 export function updateUserFailureReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.UPDATE_USER_FAILURE) {
         let _action = action as actions.UserAction
-        return { ...state, message: _action.message}
+        return { ...state, message: _action.message, isOpen: true}
       } else {
         return state
     }
@@ -72,7 +72,7 @@ export function updateUserFailureReducer(state: UserState, action: Action): User
 export function deleteUserSuccessReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.DELETE_USER_SUCCESS) {
         let _action = action as actions.UserAction
-        return { ...state, message: _action.message}
+        return { ...state, message: _action.message, isOpen: true}
     } else {
         return state
     }
@@ -81,7 +81,15 @@ export function deleteUserSuccessReducer(state: UserState, action: Action): User
 export function deleteUserFailureReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.DELETE_USER_FAILURE) {
         let _action = action as actions.UserAction
-        return { ...state, message: _action.message}
+        return { ...state, message: _action.message, isOpen: true}
+      } else {
+        return state
+    }
+}
+
+export function clearMessageDataReducer(state: UserState, action: Action): UserState {
+    if (action.type === actions.CLEAR_MESSAGE_DATA) {
+        return { ...state, message: '', isOpen: false}
       } else {
         return state
     }
