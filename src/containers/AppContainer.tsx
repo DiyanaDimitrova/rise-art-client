@@ -1,12 +1,14 @@
+// container for the App page with connection to redux
+
 import { connect } from 'react-redux'
 import App from '../components/App/App'
 import * as actions from '../actions/userActions'
 
 const mapStateToProps = (state: any) => ({
-  userList: state.user.userList,
-  userListLoading: state.user.userListLoading,
-  message: state.user.message,
-  isOpen: state.user.isOpen
+  userList: state.users.userList,
+  userListLoading: state.users.userListLoading,
+  message: state.users.message,
+  isOpen: state.users.isOpen
 })
 
 function mapDispatchToProps(dispatch) {

@@ -1,10 +1,11 @@
+// container for the User Details page with connection to redux
 import { connect } from 'react-redux'
 import * as actions from '../actions/userActions'
 import UserDetails from '../components/UserDetails/UserDetails'
 
 const mapStateToProps = (state: any) => ({
-  userDetails: state.user.userDetails,
-  userLoading: state.user.userLoading
+  userDetails: state.users.userDetails,
+  userLoading: state.users.userLoading
 })
 
 const mapDispatchToProps = (dispatch) => {

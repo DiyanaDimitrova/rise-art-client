@@ -1,3 +1,4 @@
+// Component for information of the user
 import * as React from 'react'
 import { User } from '../../main/userMain'
 

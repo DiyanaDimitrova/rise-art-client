@@ -1,3 +1,4 @@
+// Component for edit of the user
 import * as React from 'react'
 import UserForm from '../UserForm/UserForm'
 export interface UserEditProps {

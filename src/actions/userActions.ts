@@ -1,6 +1,8 @@
+// action creator file
 import axios from 'axios'
 import { Action } from 'redux'
 import * as m from '../main/userMain'
+// definition of all actions
 export const GET_USER_LIST = '@@User/GET_USER_LIST'
 export const GET_USER_LIST_SUCCESS = '@@User/GET_USER_LIST_SUCCESS'
 export const GET_USER_LIST_FAILURE = '@@User/GET_USER_LIST_FAILURE'
@@ -13,6 +15,7 @@ export const DELETE_USER_SUCCESS = '@@User/DELETE_USER_SUCCESS'
 export const DELETE_USER_FAILURE = '@@User/DELETE_USER_FAILURE'
 export const CLEAR_MESSAGE_DATA = '@@User/CLEAR_MESSAGE_DATA'
 
+// custom action, that extends redux action
 export interface GetUserListAction extends Action {
     userList: Array<m.User>
 }
@@ -23,6 +26,7 @@ export interface UserAction extends Action {
     message: String
 }
 
+// actions for retrieving all users
 export function getUserList(): Action {
     return { type: GET_USER_LIST } as Action
 }
@@ -43,6 +47,7 @@ export function loadUserList(dispatch: any): void {
         })
 }
 
+// actions for retrieving user details by id
 export function getUser(): Action {
     return { type: GET_USER } as Action
 }
@@ -63,6 +68,7 @@ export function loadUser(id: String, dispatch: any): void {
         })
 }
 
+// actions for updating of the name of the user
 export function updateUserSuccessAction(message: String): UserAction {
     return { type: UPDATE_USER_SUCCESS, message: message } as UserAction
 }
@@ -80,6 +86,7 @@ export function editUser(id: String, name: String, dispatch: any): void {
         })
 }
 
+// actions for deleting of the user
 export function deleteUserSuccessAction(message: String): UserAction {
     return { type: DELETE_USER_SUCCESS, message: message } as UserAction
 }
@@ -96,6 +103,8 @@ export function removeUser(id: String, dispatch: any): void {
             dispatch(deleteUserFailAction(err.data.message))
         })
 }
+
+// actions for clearing of the messages
 export function clearMessageData(): Action {
     return { type: CLEAR_MESSAGE_DATA } as Action
 }

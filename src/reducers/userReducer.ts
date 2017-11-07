@@ -1,6 +1,9 @@
+// reducer for the users in the system
 import { UserState } from '../main/userMain'
 import { Action } from 'redux'
 import * as actions from '../actions/userActions'
+
+//reducers for retrieving all users
 export function getUserListReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.GET_USER_LIST) {
         return { ...state, userListLoading: true }
@@ -26,6 +29,8 @@ export function setUserListFailureReducer(state: UserState, action: Action): Use
         return state
     }
 }
+
+//reducers for retrieving user details by id
 export function getUserReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.GET_USER) {
         return { ...state, userLoading: true }
@@ -51,6 +56,7 @@ export function setUserFailureReducer(state: UserState, action: Action): UserSta
     }
 }
 
+//reducers for updating of the name of the user
 export function updateUserSuccessReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.UPDATE_USER_SUCCESS) {
         let _action = action as actions.UserAction
@@ -69,6 +75,7 @@ export function updateUserFailureReducer(state: UserState, action: Action): User
     }
 }
 
+//reducers for deleting of the user
 export function deleteUserSuccessReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.DELETE_USER_SUCCESS) {
         let _action = action as actions.UserAction
@@ -87,6 +94,7 @@ export function deleteUserFailureReducer(state: UserState, action: Action): User
     }
 }
 
+//reducer for clearing the messages
 export function clearMessageDataReducer(state: UserState, action: Action): UserState {
     if (action.type === actions.CLEAR_MESSAGE_DATA) {
         return { ...state, message: '', isOpen: false }

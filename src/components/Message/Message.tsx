@@ -1,3 +1,4 @@
+// Component for the messages in the system
 import * as React from 'react'
 
 export interface MessageProps {

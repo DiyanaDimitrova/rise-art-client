@@ -1,3 +1,4 @@
+// definition of the routes and logo of the system
 import * as React from 'react'
 import { Router, browserHistory, Route } from 'react-router'
 import { AppState } from '../store/AppStore'

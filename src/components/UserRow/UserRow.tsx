@@ -1,3 +1,4 @@
+// Component for row in the table filler with user name and actions
 import * as React from 'react'
 import { Link } from 'react-router'
 

@@ -1,3 +1,4 @@
+// Component with form for edit of the name of the user
 import * as React from 'react'
 import { User } from '../../main/userMain'
 import { browserHistory } from 'react-router'
@@ -16,7 +17,6 @@ export interface UserFromState {
 export default class UserFrom extends React.Component<UserFromProps, UserFromState> {
   constructor(props) {
     super(props)
-    console.log(props)
     this.state = {
       name: props !== null ? props.name : ''
     }

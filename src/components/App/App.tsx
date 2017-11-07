@@ -1,3 +1,4 @@
+// Component with table with all users and messages for the actions
 import * as React from 'react'
 import UserList from '../UserList/UserList'
 import Message from '../Message/Message'
@@ -37,7 +38,7 @@ export default class App extends React.Component<Props, any> {
     return (
       <div>
         {this.props.isOpen === true && <Message messageText={this.props.message} closeMessage={this.props.clearMessage} />}
-        {this.props.userList !== null && this.props.userList.length > 0 && this.props.userListLoading === false ? <UserList userList={this.props.userList} deleteUser={this.props.removeUser}></UserList> : <div>Loading ...</div>}
+        {this.props.userList !== null && this.props.userList.length > 0 && this.props.userListLoading === false ? <UserList userList={this.props.userList} deleteUser={this.props.removeUser}></UserList> : <div className="alert alert-primary" role="alert">Loading ...</div>}
       </div>
     )
   }

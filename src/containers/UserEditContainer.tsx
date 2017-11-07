@@ -1,3 +1,4 @@
+// container for the User Edit page with connection to redux
 import { connect } from 'react-redux'
 import * as actions from '../actions/userActions'
 import UserEdit from '../components/UserEdit/UserEdit'

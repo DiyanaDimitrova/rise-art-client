@@ -2,6 +2,7 @@ import { Action } from 'redux'
 import * as r from '../reducers/userReducer'
 import * as a from '../actions/userActions'
 
+// definition of the User
 export interface User {
   _id: String
   name: String
@@ -19,7 +20,7 @@ export interface User {
   }
 }
 
-
+// definition of the UserState
 export interface UserState {
   userListLoading: Boolean,
   userList: Array<User>
@@ -29,6 +30,7 @@ export interface UserState {
   isOpen: Boolean
 }
 
+// initial state
 export const initialState: UserState = {
   userListLoading: false,
   userList: [],
@@ -38,6 +40,7 @@ export const initialState: UserState = {
   isOpen: false
 }
 
+// mapping of actions and reducers
 const reducers = {
   [a.GET_USER_LIST]: r.getUserListReducer,
   [a.GET_USER_LIST_SUCCESS]: r.getUserListSuccessReducer,
@@ -52,6 +55,7 @@ const reducers = {
   [a.CLEAR_MESSAGE_DATA]: r.clearMessageDataReducer
 }
 
+// reducer for the users
 export function userReducer(state: UserState = initialState, action: Action): UserState {
   let reducer = reducers[action.type]
   if (reducer) {

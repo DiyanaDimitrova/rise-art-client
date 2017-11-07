@@ -1,12 +1,13 @@
+//configuration of the store
 import { createStore, combineReducers, Reducer, Store, compose } from 'redux'
 import { UserState, userReducer } from '../main/userMain'
 
 export interface AppState {
-    user: UserState
+    users: UserState
 }
 
 const appReducer: Reducer<AppState> = combineReducers<AppState>({
-    user: userReducer
+    users: userReducer
 })
 
 const rootReducer = (state, action) => {

@@ -1,3 +1,4 @@
+// Component for table with all users in the system
 import * as React from 'react'
 import UserRow from '../UserRow/UserRow'
 

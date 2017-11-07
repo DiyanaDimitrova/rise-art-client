@@ -1,3 +1,4 @@
+// Component with details of the user
 import * as React from 'react'
 import { browserHistory } from 'react-router'
 import UserInfo from '../UserInfo/UserInfo'
@@ -26,7 +27,7 @@ export default class UserDetails extends React.Component<UserDetailsProps, any> 
     return (
       <div >
         {this.props.userDetails !== null && this.props.userLoading === false ?
-          <UserInfo userDetails={this.props.userDetails} /> : <div>Loading ...</div>}
+          <UserInfo userDetails={this.props.userDetails} /> : <div className="alert alert-primary" role="alert">Loading ...</div>}
       </div>
     )
   }
