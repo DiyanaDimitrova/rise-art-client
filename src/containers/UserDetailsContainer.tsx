@@ -8,10 +8,10 @@ const mapStateToProps = (state: any) => ({
 })
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-      loadUser: (id: String): void => {
-          actions.loadUser(id, dispatch)
-      }
+  return {
+    loadUser: (id: String): void => {
+      actions.loadUser(id, dispatch)
     }
+  }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(UserDetails)

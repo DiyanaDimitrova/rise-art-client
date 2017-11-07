@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router'
 
-export interface UserRowProps{
+export interface UserRowProps {
   user: any
   deleteUser: (id: String) => void
 }
@@ -11,10 +11,10 @@ export default class UserRow extends React.Component<UserRowProps, any> {
     super(props)
     this.deleteUser = this.deleteUser.bind(this)
   }
-  deleteUser = (event)  => {
+  deleteUser = (event) => {
     this.props.deleteUser(this.props.user._id)
   }
-  render () {
+  render() {
     const user = this.props.user
     return (
       <tr>

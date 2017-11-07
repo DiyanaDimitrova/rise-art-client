@@ -1,5 +1,5 @@
 import { createStore, combineReducers, Reducer, Store, compose } from 'redux'
-import { UserState, userReducer} from '../main/userMain'
+import { UserState, userReducer } from '../main/userMain'
 
 export interface AppState {
     user: UserState

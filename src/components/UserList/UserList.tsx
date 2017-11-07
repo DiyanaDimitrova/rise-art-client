@@ -1,13 +1,13 @@
 import * as React from 'react'
 import UserRow from '../UserRow/UserRow'
 
-export interface UserListProps{
+export interface UserListProps {
   userList: any
   deleteUser: (id: String) => void
 }
 
 export default class UserList extends React.Component<UserListProps, any> {
-  render () {
+  render() {
     const userList = this.props.userList
     return (
       <table className="table list">
@@ -26,7 +26,7 @@ export default class UserList extends React.Component<UserListProps, any> {
     )
   }
 
-  tableRows (userList) {
+  tableRows(userList) {
     return userList.map((user, index) => {
       return (<UserRow user={user} key={index} deleteUser={this.props.deleteUser} />)
     })

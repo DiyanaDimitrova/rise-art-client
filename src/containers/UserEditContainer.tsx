@@ -7,9 +7,9 @@ const mapStateToProps = (state: any) => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-      editUser: (id: String, name: String): void => {
-          actions.editUser(id, name, dispatch)
-      }
+        editUser: (id: String, name: String): void => {
+            actions.editUser(id, name, dispatch)
+        }
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(UserEdit)

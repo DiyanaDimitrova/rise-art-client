@@ -3,7 +3,7 @@ import { browserHistory } from 'react-router'
 import UserInfo from '../UserInfo/UserInfo'
 import * as main from '../../main/userMain'
 
-export interface UserDetailsProps{
+export interface UserDetailsProps {
   userDetails: main.User,
   userLoading: Boolean,
   params: any,
@@ -23,11 +23,11 @@ export default class UserDetails extends React.Component<UserDetailsProps, any> 
   }
 
   render() {
-      return (
-        <div >
-          {this.props.userDetails !== null && this.props.userLoading === false ?
-            <UserInfo userDetails={this.props.userDetails}/> : <div>Loading ...</div>}
-        </div>
-      )
-    }
+    return (
+      <div >
+        {this.props.userDetails !== null && this.props.userLoading === false ?
+          <UserInfo userDetails={this.props.userDetails} /> : <div>Loading ...</div>}
+      </div>
+    )
+  }
 }

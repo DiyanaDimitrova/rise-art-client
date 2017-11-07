@@ -12,13 +12,13 @@ const mapStateToProps = (state: any) => ({
 function mapDispatchToProps(dispatch) {
   return {
     loadUserList: (): void => {
-        actions.loadUserList(dispatch)
+      actions.loadUserList(dispatch)
     },
     removeUser: (id: String): void => {
-        actions.removeUser(id, dispatch)
+      actions.removeUser(id, dispatch)
     },
     clearMessage: (): void => {
-        actions.clearMessage(dispatch)
+      actions.clearMessage(dispatch)
     }
   }
 }

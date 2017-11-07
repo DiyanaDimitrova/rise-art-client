@@ -19,8 +19,8 @@ export class AppRouter extends React.Component<any, AppState> {
         <div className="container">
           <Router ref='routeRef' history={browserHistory} >
             <Route path='/' component={App} />
-            <Route path='/user/:id' component={UserDetails}/>
-            <Route path='/user/:id/:name' component={UserEdit}/>
+            <Route path='/user/:id' component={UserDetails} />
+            <Route path='/user/:id/:name' component={UserEdit} />
           </Router>
         </div>
       </div>

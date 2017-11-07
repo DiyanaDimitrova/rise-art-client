@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export interface MessageProps{
+export interface MessageProps {
   messageText: String
   closeMessage: () => void
 }
@@ -12,7 +12,7 @@ export default class Message extends React.Component<MessageProps, any> {
   closeMessage = () => {
     this.props.closeMessage()
   }
-  render () {
+  render() {
     return (
       <div className="alert alert-success" role="alert">
         {this.props.messageText}

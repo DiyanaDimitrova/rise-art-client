@@ -2,13 +2,13 @@ import * as React from 'react'
 import { User } from '../../main/userMain'
 import { browserHistory } from 'react-router'
 
-export interface UserFromProps{
+export interface UserFromProps {
   name: String
   id: String,
   editUser: (id: String, name: String) => void
 }
 
-export interface UserFromState{
+export interface UserFromState {
   name: any
 }
 
@@ -25,17 +25,17 @@ export default class UserFrom extends React.Component<UserFromProps, UserFromSta
   }
 
   nameEntered = (event) => {
-      if (event.target.value) {
-        this.setState({ name: event.target.value })
-      }
+    if (event.target.value) {
+      this.setState({ name: event.target.value })
     }
-  updateName = (event)  => {
+  }
+  updateName = (event) => {
     event.preventDefault()
     this.props.editUser(this.props.id, this.state.name)
-    this.setState({name : ''})
+    this.setState({ name: '' })
     browserHistory.push('/')
   }
-  render () {
+  render() {
     return (
       <div className="row update">
         <div className="col-sm-12 col-md-12 col-lg-12">

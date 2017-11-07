@@ -29,15 +29,15 @@ export default class App extends React.Component<Props, any> {
     clearMessage: null
   }
   componentDidMount() {
-      this.props.loadUserList()
+    this.props.loadUserList()
   }
 
   render() {
     const { userList, userListLoading } = this.props;
     return (
       <div>
-         {this.props.isOpen === true && <Message messageText={this.props.message} closeMessage={this.props.clearMessage} />}
-         {this.props.userList !== null && this.props.userList.length > 0 && this.props.userListLoading === false ? <UserList userList={this.props.userList} deleteUser={this.props.removeUser}></UserList> : <div>Loading ...</div>}
+        {this.props.isOpen === true && <Message messageText={this.props.message} closeMessage={this.props.clearMessage} />}
+        {this.props.userList !== null && this.props.userList.length > 0 && this.props.userListLoading === false ? <UserList userList={this.props.userList} deleteUser={this.props.removeUser}></UserList> : <div>Loading ...</div>}
       </div>
     )
   }

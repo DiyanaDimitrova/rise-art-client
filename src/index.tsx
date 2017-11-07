@@ -9,7 +9,7 @@ axios.defaults.baseURL = 'http://localhost:3001'
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 ReactDOM.render(
     <ReduxProvider store={appStore}>
-         <AppRouter />
+        <AppRouter />
     </ReduxProvider>,
     document.getElementById('root')
 )

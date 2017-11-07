@@ -1,6 +1,6 @@
 import * as React from 'react'
 import UserForm from '../UserForm/UserForm'
-export interface UserEditProps{
+export interface UserEditProps {
   params: any
   editUser: (id: String, name: String) => void
 }
@@ -13,7 +13,7 @@ export default class UserEdit extends React.Component<UserEditProps, any> {
   render() {
     return (
       <div>
-        <UserForm name={this.props.params.name} id={this.props.params.id} editUser={this.props.editUser}/>
+        <UserForm name={this.props.params.name} id={this.props.params.id} editUser={this.props.editUser} />
       </div>
     )
   }

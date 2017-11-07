@@ -3,20 +3,20 @@ import * as r from '../reducers/userReducer'
 import * as a from '../actions/userActions'
 
 export interface User {
-    _id: String
+  _id: String
+  name: String
+  email: String
+  avatar: String
+  bio: String
+  company: {
     name: String
-    email: String
-    avatar: String
-    bio: String
-    company: {
-      name: String
-    }
-    address: {
-      zipCode: Number
-      city: String
-      streetName: String
-      streetAddress: String
-    }
+  }
+  address: {
+    zipCode: Number
+    city: String
+    streetName: String
+    streetAddress: String
+  }
 }
 
 
@@ -53,9 +53,9 @@ const reducers = {
 }
 
 export function userReducer(state: UserState = initialState, action: Action): UserState {
-    let reducer = reducers[action.type]
-    if (reducer) {
-        return reducer(state, action)
-    }
-    return state
+  let reducer = reducers[action.type]
+  if (reducer) {
+    return reducer(state, action)
+  }
+  return state
 }

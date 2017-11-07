@@ -30,17 +30,17 @@ export function getUserListSuccess(userList: Array<m.User>): GetUserListAction {
     return { type: GET_USER_LIST_SUCCESS, userList: userList } as GetUserListAction
 }
 export function setUserListFailure(userList: Array<m.User>): GetUserListAction {
-    return { type: GET_USER_LIST_FAILURE, userList: userList} as GetUserListAction
+    return { type: GET_USER_LIST_FAILURE, userList: userList } as GetUserListAction
 }
 export function loadUserList(dispatch: any): void {
     dispatch(getUserList())
     axios.get('/users')
-      .then((response) => {
-          dispatch(getUserListSuccess(response.data.users))
-      })
-      .catch((err) => {
-          dispatch(setUserListFailure([]))
-      })
+        .then((response) => {
+            dispatch(getUserListSuccess(response.data.users))
+        })
+        .catch((err) => {
+            dispatch(setUserListFailure([]))
+        })
 }
 
 export function getUser(): Action {
@@ -50,17 +50,17 @@ export function getUserSuccess(userDetails: m.User): GetUserAction {
     return { type: GET_USER_SUCCESS, userDetails: (<any>Object).assign({}, userDetails) } as GetUserAction
 }
 export function getUserFailure(userDetails: m.User): GetUserAction {
-    return { type: GET_USER_FAILURE, userDetails: userDetails} as GetUserAction
+    return { type: GET_USER_FAILURE, userDetails: userDetails } as GetUserAction
 }
 export function loadUser(id: String, dispatch: any): void {
     dispatch(getUser())
     axios.get('/users/' + id)
-      .then((response) => {
-          dispatch(getUserSuccess(response.data.user))
-      })
-      .catch((err) => {
-          dispatch(getUserFailure(null))
-      })
+        .then((response) => {
+            dispatch(getUserSuccess(response.data.user))
+        })
+        .catch((err) => {
+            dispatch(getUserFailure(null))
+        })
 }
 
 export function updateUserSuccessAction(message: String): UserAction {
@@ -71,13 +71,13 @@ export function updateUserFailAction(message: String): UserAction {
 }
 export function editUser(id: String, name: String, dispatch: any): void {
     axios.put('/users/update/' + id, { name: name })
-      .then((response) => {
-          dispatch(updateUserSuccessAction(response.data.message))
-          loadUserList(dispatch)
-      })
-      .catch((err) => {
-          dispatch(updateUserFailAction(err.data.message))
-      })
+        .then((response) => {
+            dispatch(updateUserSuccessAction(response.data.message))
+            loadUserList(dispatch)
+        })
+        .catch((err) => {
+            dispatch(updateUserFailAction(err.data.message))
+        })
 }
 
 export function deleteUserSuccessAction(message: String): UserAction {
@@ -88,13 +88,13 @@ export function deleteUserFailAction(message: String): UserAction {
 }
 export function removeUser(id: String, dispatch: any): void {
     axios.delete('/users/delete/' + id)
-      .then((response) => {
-          dispatch(deleteUserSuccessAction(response.data.message))
-          loadUserList(dispatch)
-      })
-      .catch((err) => {
-          dispatch(deleteUserFailAction(err.data.message))
-      })
+        .then((response) => {
+            dispatch(deleteUserSuccessAction(response.data.message))
+            loadUserList(dispatch)
+        })
+        .catch((err) => {
+            dispatch(deleteUserFailAction(err.data.message))
+        })
 }
 export function clearMessageData(): Action {
     return { type: CLEAR_MESSAGE_DATA } as Action
